@@ -1,14 +1,14 @@
 {
   "routes": [
-	{
-      "route": "/static/*",
-      "headers": {
-        "cache-control": "no-cache, no-store, must-revalidate"
-      }
+    {
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
     }
-],
-  "globalHeaders": {"cache-control": "no-cache, no-store, must-revalidate"},
-  "mimeTypes": {},
-  "responseOverrides": {},
-  "navigationFallback": {}
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/.auth/login/aad"
+    }
+  }
 }
