@@ -1,0 +1,14 @@
+{
+  "routes": [
+	{
+      "route": "/static/*",
+      "headers": {
+        "cache-control": "public, max-age=60"
+      }
+    }
+],
+  "globalHeaders": {"cache-control": "no-cache, no-store, must-revalidate"},
+  "mimeTypes": {},
+  "responseOverrides": {},
+  "navigationFallback": {}
+}
